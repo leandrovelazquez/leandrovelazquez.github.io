@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leandro Velazquez - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="header">
+    <div class="container">
+        <nav>
+            <img src="images/logo.png" class="logo">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Resources</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <div class="header-text">
+            <p>Computer Mathematics Student</p>
+            <h1>Leandro Velazquez</h1>
+        </div>
+        <img src="images/profile_p.png">
+    </div>
+</div>
+
+
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+            <div class="about-col-1">
+                <img src="images/about.png">
+            </div>
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p>My name is Leandro Velazquez, I am a third year computer mathematics student at Carleton University in Ottawa ON.
+                I hope to gain experince through part-time or full time internships that offer an enviroment where I can grow and 
+                develop my skills in fields such as web developemnt, or data science. My main focus is to polish my current skills 
+                while adding any new techincal abilities.</p>
+
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab('education')">Eduction</p>
+                </div>
+                <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span>Proficient in:</span><br>Python, Java, C, Javascript, HTML/CSS, MySQL</li>
+                        <li><span>Microsoft Office Skills:</span><br>Word, Powerpoint, Excel</li>
+                        <li><span>Languages:</span><br>Fluent in English, French, and Spanish</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id ="experience">
+                    <ul>
+                        <li><span>DUBS Advising - Software Engineer Intern (May 2023 - July 2023):</span><br>Interned as a full-stack devloper, gaining experience in various technologies such asJavaScript, Python, HTML, and CSS</li>
+                        <li><span>OIRP Co-op (May 2021 - August 2021)</span><br>Developed python scripts that interacted with database systems and web applications, scripts that dealt with the ETL processes required to clean and correct data before publishing.</li>
+                    </ul>
+                </div>
+                <div class="tab-contents" id = "education">
+                    <ul>
+                        <li><span>Carleton University (2019-present)</span><br>Bachelor of Computer Mathematics, expected gradutation: May 2025</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    function opentab(tabname){
+        for(tablink of tablinks){
+            tablink.classList.remove("active-link");
+        }
+        for(tabcontent of tabcontents){
+            tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link")
+        document.getElementById(tabname).classList.add("active-tab")
+    }
+</script>
+
+</body>
+</html> 
