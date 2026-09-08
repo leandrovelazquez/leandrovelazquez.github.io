@@ -3,28 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name=" viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leandro Velazquez - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div id="header">
     <div class="container">
         <nav>
-            <img src="images/logo.png" class="logo">
+            <img src="images/logo.png" class="logo" alt="Leandro Velazquez">
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Resources</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="#header">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
-        
+
         <div class="header-text">
             <p>Computer Mathematics Student</p>
             <h1>Leandro Velazquez</h1>
         </div>
-        <img src="images/profile_p.png">
+        <img src="images/profile_p.png" alt="Profile photo">
     </div>
 </div>
 
@@ -33,37 +36,35 @@
 <div id="about">
     <div class="container">
         <div class="row">
-            <div class="about-col-1">
-                <img src="images/about.png">
-            </div>
             <div class="about-col-2">
                 <h1 class="sub-title">About Me</h1>
                 <p>My name is Leandro Velazquez, I am a third year computer mathematics student at Carleton University in Ottawa ON.
-                I hope to gain experince through part-time or full time internships that offer an enviroment where I can grow and 
-                develop my skills in fields such as web developemnt, or data science. My main focus is to polish my current skills 
-                while adding any new techincal abilities.</p>
+                I hope to gain experience through part-time or full time internships that offer an environment where I can grow and
+                develop my skills in fields such as web development, or data science. My main focus is to polish my current skills
+                while adding any new technical abilities.</p>
 
                 <div class="tab-titles">
-                    <p class="tab-links active-link" onclick="opentab('skills')">Skills</p>
-                    <p class="tab-links" onclick="opentab('experience')">Experience</p>
-                    <p class="tab-links" onclick="opentab('education')">Eduction</p>
+                    <p class="tab-links active-link" onclick="opentab(event, 'skills')">Skills</p>
+                    <p class="tab-links" onclick="opentab(event, 'experience')">Experience</p>
+                    <p class="tab-links" onclick="opentab(event, 'education')">Education</p>
                 </div>
                 <div class="tab-contents active-tab" id="skills">
                     <ul>
                         <li><span>Proficient in:</span><br>Python, Java, C, Javascript, HTML/CSS, MySQL</li>
+                        <li><span>Data &amp; tooling:</span><br>PostgreSQL, Oracle, Apache Airflow, pandas, SQLAlchemy, Git</li>
                         <li><span>Microsoft Office Skills:</span><br>Word, Powerpoint, Excel</li>
                         <li><span>Languages:</span><br>Fluent in English, French, and Spanish</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id ="experience">
                     <ul>
-                        <li><span>DUBS Advising - Software Engineer Intern (May 2023 - July 2023):</span><br>Interned as a full-stack devloper, gaining experience in various technologies such asJavaScript, Python, HTML, and CSS</li>
+                        <li><span>DUBS Advising - Software Engineer Intern (May 2023 - July 2023):</span><br>Interned as a full-stack developer, gaining experience in various technologies such as JavaScript, Python, HTML, and CSS</li>
                         <li><span>OIRP Co-op (May 2021 - August 2021)</span><br>Developed python scripts that interacted with database systems and web applications, scripts that dealt with the ETL processes required to clean and correct data before publishing.</li>
                     </ul>
                 </div>
                 <div class="tab-contents" id = "education">
                     <ul>
-                        <li><span>Carleton University (2019-present)</span><br>Bachelor of Computer Mathematics, expected gradutation: May 2025</li>
+                        <li><span>Carleton University (2019-present)</span><br>Bachelor of Computer Mathematics, expected graduation: May 2025</li>
                     </ul>
                 </div>
             </div>
@@ -71,10 +72,89 @@
     </div>
 </div>
 
+
+
+<div id="projects">
+    <div class="container">
+        <h1 class="sub-title">Projects</h1>
+        <div class="project-list">
+
+            <div class="project">
+                <h2>OIRP Chat</h2>
+                <p>A chat agent grounded in a semantic layer over institutional research data. Claude with tool use, a
+                   verified-value store, and explicit refusal behaviour so it will not hallucinate a number it cannot
+                   source.</p>
+                <p class="stack">Python &middot; Claude API &middot; tool use &middot; semantic layer</p>
+                <a href="https://github.com/leandrovelazquez/oirp-chat">View on GitHub</a>
+            </div>
+
+            <div class="project">
+                <h2>E-Commerce Data Pipeline</h2>
+                <p>Daily batch pipeline with slowly-changing-dimension (SCD2) history, Airflow orchestration, and
+                   checkpoint recovery so an interrupted run resumes instead of restarting. Covered by a pytest suite.</p>
+                <p class="stack">Python &middot; Airflow &middot; SQL &middot; pytest</p>
+                <a href="https://github.com/leandrovelazquez/e-commerce-data-pipeline">View on GitHub</a>
+            </div>
+
+            <div class="project">
+                <h2>OIRP Pipeline</h2>
+                <p>ETL loading an institutional-research star schema into a warehouse, written twice against the same
+                   interface &mdash; once for PostgreSQL, once for Oracle &mdash; with sample data so it runs end to end.</p>
+                <p class="stack">Python &middot; PostgreSQL &middot; Oracle &middot; SQLAlchemy</p>
+                <a href="https://github.com/leandrovelazquez/oirp-pipeline">View on GitHub</a>
+            </div>
+
+            <div class="project">
+                <h2>UIGen</h2>
+                <p>A Next.js application that generates React UI from a chat interface, backed by Prisma and covered by
+                   a Vitest component suite.</p>
+                <p class="stack">TypeScript &middot; Next.js &middot; Prisma &middot; Vitest</p>
+                <a href="https://github.com/leandrovelazquez/Claude-code">View on GitHub</a>
+            </div>
+
+            <div class="project">
+                <h2>XGBoost Notebooks</h2>
+                <p>Gradient-boosting walkthroughs on two datasets &mdash; diabetes outcome classification and university
+                   admission prediction &mdash; from loading and inspection through to evaluation.</p>
+                <p class="stack">Python &middot; XGBoost &middot; pandas &middot; Jupyter</p>
+                <a href="https://github.com/leandrovelazquez/xgboost-notebooks">View on GitHub</a>
+            </div>
+
+            <div class="project">
+                <h2>More</h2>
+                <p>Machine-learning coursework, SQL analysis of Chicago public datasets, and Airflow DAG builds live
+                   alongside everything above.</p>
+                <p class="stack">Python &middot; R &middot; SQL &middot; Jupyter</p>
+                <a href="https://github.com/leandrovelazquez">See all repositories</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+                <p><span>&#9993;</span> <a href="mailto:leandro.velazquez2001@gmail.com">leandro.velazquez2001@gmail.com</a></p>
+                <p><span>&#9679;</span> <a href="https://github.com/leandrovelazquez">github.com/leandrovelazquez</a></p>
+                <p><span>&#9679;</span> Ottawa, Ontario</p>
+                <a href="Leandro_VelazquezCV.pdf" class="btn" download>Download CV</a>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <p>&copy; Leandro Velazquez</p>
+    </div>
+</div>
+
 <script>
     var tablinks = document.getElementsByClassName("tab-links");
     var tabcontents = document.getElementsByClassName("tab-contents");
-    function opentab(tabname){
+    function opentab(event, tabname){
         for(tablink of tablinks){
             tablink.classList.remove("active-link");
         }
@@ -87,4 +167,4 @@
 </script>
 
 </body>
-</html> 
+</html>
